@@ -3,6 +3,11 @@ class Auth {
         this.authenticated = false
     }
 
+    component() {
+        this.setState( { authenticated: JSON.parse(localStorage.getItem("auth")) } )
+    }
+
+
     login(callback) {
         this.authenticated = true
         callback();
@@ -10,6 +15,7 @@ class Auth {
 
     logout(callback) {
         this.authenticated = false
+        
     }
 
     isAuthenticated() {

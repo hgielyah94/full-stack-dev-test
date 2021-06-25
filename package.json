@@ -12,6 +12,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "sass": "^1.35.1",
+    "serve-index": "^1.9.1",
+    "store": "^2.0.12",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -37,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "proxy": "http://localhost:3000"
 }
