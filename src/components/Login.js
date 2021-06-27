@@ -1,24 +1,31 @@
 import React, { useState } from "react";
-import auth from '../auth/auth';
 
-const Login = (props) => {
-    const [email, setEmail] = useState();
+const Login = () => {
+    const [email, setEmail] = useState("");
+    console.log("auth", localStorage.getItem("isAuthenticated"));
 
-    function updateEmail(event) {
-    setEmail(event.target.value)
+    const updateEmail = (event) => {
+    setEmail((prevState) => {
+      return {
+        ...prevState,
+        [event.target.name] : event.target.value,
+      };
+    });
   }
 
   function handleSubmit(event) {
   event.preventDefault();
-  console.log(email);
-   if (email === "") {
+  console.log(email); 
+  
+  if (email === undefined || email === "") {
       return (
         alert("Please enter a valid email address")
       );
     } else {
-        return null;
-    }
-  }
+      localStorage.setItem("isAuthenticated", "true");
+      window.location.pathname = "/components/dashboard";
+                }
+            }
 
 return (
 <div>
@@ -27,7 +34,7 @@ return (
         <img src="https://green.cdn.energy/branding/logo-r.svg" className="green-logo" alt="Green" height="40" />
           <h1 className="card-title">Welcome to Green.</h1>
         <h4>Please enter your email below</h4>
-         <div className="sign-in-form" onSubmit={handleSubmit}>
+         <div className="sign-in-form" >
             <label className="form-label">Email Address</label>
             <input type="email" className="form-input" onChange={updateEmail}/>
             </div>
@@ -35,12 +42,7 @@ return (
             <input className="form-check-input" type="checkbox" value="" />
             <label className="form-check-label"> Remember this device </label>
             </div>
-         <button onClick={() => { 
-           auth.login(() => {
-                props.history.push("/components/dashboard");
-        });
-        }}
-        >Sign In</button>
+         <button onClick={handleSubmit}>Sign In</button>
           </div>
            </div>
       </div> 

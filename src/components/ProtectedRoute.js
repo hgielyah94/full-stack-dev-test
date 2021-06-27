@@ -1,24 +1,19 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import auth from '../auth/auth';
 
-export const ProtectedRoute = ({ component: Component, ...rest }) => {
+function ProtectedRoute({ component: Component, ...rest }) {
+const isAuthenticated = localStorage.getItem("isAuthenticated");
+console.log("this", isAuthenticated);
+
+
 return (
     <Route 
-    {...rest} render={props => {
-        if (auth.isAuthenticated()) {
-        return <Component {...props} />;
-        } else {
-            return <Redirect to={
-                {
-                    pathname: "/components/dashboard",
-                    state: {
-                        from: props.location
-                    }
-                }
-            } />
+    {...rest} render={(props) => 
+        isAuthenticated ? <Component {...props} /> :
+        <Redirect to="/" />
         }
-    }}
-/>
-);
-}
+        />
+    );
+    }
+    
+export default ProtectedRoute;

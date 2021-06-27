@@ -7,15 +7,15 @@ class Auth {
         this.setState( { authenticated: JSON.parse(localStorage.getItem("auth")) } )
     }
 
-
     login(callback) {
-        this.authenticated = true
+        this.authenticated = true;
+        localStorage.setItem("auth","true")
         callback();
     }
 
     logout(callback) {
-        this.authenticated = false
-        
+        this.authenticated = false;
+        callback();
     }
 
     isAuthenticated() {

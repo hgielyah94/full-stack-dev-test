@@ -1,18 +1,19 @@
-import './App.scss';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from "./components/Login";
-import ReactDOM from 'react-dom';
 import Dashboard from "./components/Dashboard";
 import NotFound from "./components/NotFound";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ProtectedRoute } from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
+
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
           <BrowserRouter>
           <Switch>
-          <Route exact path="/" component={Login} />
           <ProtectedRoute exact path="/components/Dashboard" component={Dashboard} />
+          <Route exact path="/" component={Login} />
           <Route path="*" component={NotFound} />
           </Switch>
           </BrowserRouter>
@@ -21,5 +22,3 @@ function App() {
 }
 
 export default App;
-const rootElement = document.getElementById("root");
-ReactDOM.render(<BrowserRouter><Login /></BrowserRouter>, rootElement);
