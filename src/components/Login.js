@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PageHeader from "../PageHeader";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -31,8 +32,7 @@ return (
 <div>
   <div className="card">
     <div className="card-body">
-        <img src="https://green.cdn.energy/branding/logo-r.svg" className="green-logo" alt="Green" height="40" />
-          <h1 className="card-title">Welcome to Green.</h1>
+        <PageHeader />
         <h4>Please enter your email below</h4>
          <div className="sign-in-form" >
             <label className="form-label">Email Address</label>

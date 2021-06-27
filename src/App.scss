@@ -10,7 +10,7 @@ body {
 }
 div.card {
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 190px;
   border: none;
   border-radius: 0px;
   box-shadow: 0px 2px 2px 2px #efefef;
@@ -18,10 +18,10 @@ div.card {
   background-color: white;
 }
 div.card-body {
-  padding: 50px 40px;
+  padding: 55px 40px;
 }
 .green-logo {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding-left: 3px;
   height: 30px;
 }
@@ -34,30 +34,31 @@ h1.card-title {
 h4 {
   font-weight: 100;
   margin-top: 0px;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
   color: #a5a3a4;
   font-size: 18px;
   padding-left: 3px;
 }
 .form-label {
-  color: #7b7a7b;
+  color: #757374;
   font-size: 15.5px;
   font-weight: 100;
   padding-left: 3px;
   padding-bottom: 5px;
+  letter-spacing: 0em;
 }
 .form-input {
   margin-top: 8px;
   margin-bottom: 20px;
   display: block;
-  height: 50px;
+  height: 45px;
   border-color: $box-border-colour;
   border-radius: 8px;
   border-style: solid;
   width: stretch;
 }
 .form-check {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 input.form-check-input {
   margin-top: 0px;
@@ -67,34 +68,41 @@ input.form-check-input {
   border-radius: 8px;
   margin: 0px;
 }
-.form-check-input:active {
-  border: none;
+.form-check-input {
+  &:active {
+    border: none;
+  }
 }
 .form-check-label {
   display: inline-block;
   font-weight: 100;
-  color: #4d494b;
+  color: #595759;
   padding-left: 10px;
   padding-bottom: 7px;
-  font-size: 15px;
+  font-size: 14px;
   vertical-align: middle;
+  letter-spacing: 0em;
 }
 button {
   background-color: transparent;
   border: 2px;
   border-style: solid;
   border-color: $box-border-colour;
-  font-weight: 100;
-  padding: 15px 35px;
+  font-weight: 200;
+  padding: 16px 36px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-family: $primary-font;
-  color: #555355;
-}
-button:active,
-button:hover {
-  border-color: #0274ff;
-  background-color: #0274ff;
-  color: white;
+  color: #575356;
+  &:active {
+    border-color: #0274ff;
+    background-color: #0274ff;
+    color: white;
+  }
+  &:hover {
+    border-color: #0274ff;
+    background-color: #0274ff;
+    color: white;
+  }
 }
