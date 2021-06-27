@@ -1,7 +1,6 @@
 import React from "react";
-import auth from '../auth/auth';
 
-const Dashboard = (props) => {
+const Dashboard = () => {
 return (
 <div>
   <div className="card">
@@ -10,10 +9,8 @@ return (
           <h1 className="card-title">Welcome to Green.</h1>
         <h4>Thank you for signing in</h4>
          <button onClick={() => { 
-
-            auth.login(() => {
-                props.history.push("/");
-        });
+      localStorage.setItem("isAuthenticated", "false");
+      window.location.pathname = "/";
         }}
         >Sign Out</button>
           </div>

@@ -9,7 +9,6 @@ class Auth {
 
     login(callback) {
         this.authenticated = true;
-        localStorage.setItem("auth","true")
         callback();
     }
 
